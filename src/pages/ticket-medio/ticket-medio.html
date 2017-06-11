@@ -16,9 +16,17 @@
 <ion-content padding>
 
   <div class="title-general">
-      <span class="general">Resumo Geral</span>
+     Resumo Geral
   </div>
 
     <canvas baseChart [data]="pieChartData" [labels]="pieChartLabel" [chartType]="pieChartType" (chartClick)="_captureChartClick($event)"></canvas>
 
+  
+  <div class="resumo">
+    <div class="item-resumo" *ngFor="let resumo of resumos">
+      <span>{{resumo.ies}}</span>
+      <span style="display:block; float:right;">{{resumo.valor}}</span>
+      <hr/>
+    </div>
+  </div>
 </ion-content>
