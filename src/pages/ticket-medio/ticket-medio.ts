@@ -18,13 +18,21 @@ export class TicketMedioPage {
   pieChartLabel: string[] = ['CEUMA','EURO', 'FAMAZ', 'CEUPI', 'CESUP'];
   pieChartData: number[] = [192031.32,303209.2,103822.132,382713.2,21311.3];
   pieChartType: string = 'pie';
+  resumo: any;
+  resumos = [];
+
 
   obj;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log(this.navParams.get('ies'));
+
+    this.resumos.push({ies: this.pieChartLabel[0], valor: this.pieChartData[0]});
+    this.resumos.push({ies: this.pieChartLabel[1], valor: this.pieChartData[1]});
+    this.resumos.push({ies: this.pieChartLabel[2], valor: this.pieChartData[2]});
+    this.resumos.push({ies: this.pieChartLabel[3], valor: this.pieChartData[3]});
+    this.resumos.push({ies: this.pieChartLabel[4], valor: this.pieChartData[4]});
   }
 
   private _captureChartClick(event){
