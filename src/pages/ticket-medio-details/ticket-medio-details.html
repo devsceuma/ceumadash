@@ -19,6 +19,10 @@
       <span class="general">Resumo Detalhado</span>
   </div>
 
-    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabel" [chartType]="pieChartType" (chartClick)="_captureChartClick($event)"></canvas>
+    <canvas baseChart 
+        [data]="pieChartData" 
+        [labels]="pieChartLabel" 
+        [chartType]="pieChartType" 
+        (chartClick)="_captureChartClick($event)"></canvas>
 
 </ion-content>
