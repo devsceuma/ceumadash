@@ -17,7 +17,7 @@ export class MenuPage {
 
   ies:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

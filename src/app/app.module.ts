@@ -8,6 +8,7 @@ import {HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {TicketMedioPage} from  '../pages/ticket-medio/ticket-medio';
+import { TicketMedioDetails } from '../pages/ticket-medio-details/ticket-medio-details'; 
 import {MenuPage} from '../pages/menu/menu';
 import {ChartsModule} from 'ng2-charts/charts/charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
@@ -17,7 +18,8 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
     MyApp,
     HomePage,
     TicketMedioPage,
-    MenuPage
+    MenuPage,
+    TicketMedioDetails
   ],
   imports: [
     HttpModule,
@@ -30,7 +32,8 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
     MyApp,
     HomePage,
     TicketMedioPage,
-    MenuPage
+    MenuPage,
+    TicketMedioDetails
   ],
   providers: [
     StatusBar,

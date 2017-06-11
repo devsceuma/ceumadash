@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TicketMedioDetails } from '../../pages/ticket-medio-details/ticket-medio-details'
 
 
 /**
@@ -18,6 +19,7 @@ export class TicketMedioPage {
   pieChartData: number[] = [192031.32,303209.2,103822.132,382713.2,21311.3];
   pieChartType: string = 'pie';
 
+  obj;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -36,8 +38,7 @@ export class TicketMedioPage {
         ies: label,
         valor: number
       }
-
-      console.log(obj);
+      this.navCtrl.push(TicketMedioDetails, {objChart: JSON.stringify(obj)});
     }
 
   }

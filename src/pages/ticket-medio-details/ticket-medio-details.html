@@ -1,0 +1,24 @@
+<!--
+  Generated template for the TicketMedioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='dark-blue'>
+    <ion-title>Ticket Médio Detalhado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="title-general">
+      <span class="general">Resumo Detalhado</span>
+  </div>
+
+    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabel" [chartType]="pieChartType" (chartClick)="_captureChartClick($event)"></canvas>
+
+</ion-content>
