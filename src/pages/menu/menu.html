@@ -6,23 +6,80 @@
 -->
 
 
-<ion-content>
+<ion-content class="clouds">
+
+  <div class="logo-ceuma" padding>
+      <img src="./../../assets/images/ceumalogo.png" width="100">
+  </div>
+
+  <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <ion-list>
+      <ion-item>
+        <ion-label>Selecione a IES</ion-label>
+        <ion-select>
+          <ion-option value="CEUMA">Ceuma</ion-option>
+          <ion-option value="EURO">Euro</ion-option>
+          <ion-option value="FAMAZ">Famaz</ion-option>
+          <ion-option value="CEUPI">CEUPI</ion-option>
+          <ion-option value="CESUP">CESUP</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
 
   <!-- Generated template for the MenuComponent component -->
   <div style="width: 100%;">
+
     <div class="menu-item baby-blue" (click)="loadDashBoard('TICKET_MEDIO')">
-      TICKET MÉDIO
-    </div>
-    <div class="menu-item dark-blue" (click)="loadDashBoard('...')">
-       ...
-    </div>
-    <div class="menu-item concrete" (click)="loadDashBoard('...')">
-       ..
-    </div>
-    <div class="menu-item sun-flower" (click)="loadDashBoard('...')">
-       ...
+      <img src="./../../assets/images/icon-ticket.png" class="icon-ticket" width="70"/>
+      <div class="text-item">
+        <span>TICKET MÉDIO</span>
+      </div>
+      <div class="arrow-right">
+        <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
+      </div>
     </div>
 
+    <div class="menu-item dark-blue" (click)="loadDashBoard('TICKET_MEDIO')">
+      <img src="./../../assets/images/icon-ticket.png" class="icon-ticket" width="70"/>
+      <div class="text-item">
+        <span>TICKET MÉDIO</span>
+      </div>
+      <div class="arrow-right">
+        <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
+      </div>
+    </div>
+
+    <div class="menu-item indigo" (click)="loadDashBoard('OUTRA_COISA')">
+      <img src="./../../assets/images/icon-ticket.png" class="icon-ticket" width="70"/>
+      <div class="text-item">
+        <span>TICKET MÉDIO</span>
+      </div>
+      <div class="arrow-right">
+        <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
+      </div>
+    </div>
+    
+    <div class="menu-item sun-flower" (click)="loadDashBoard('TICKET_MEDIO')">
+      <img src="./../../assets/images/icon-ticket.png" class="icon-ticket" width="70"/>
+      <div class="text-item">
+        <span>TICKET MÉDIO</span>
+      </div>
+      <div class="arrow-right">
+        <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
+      </div>
+    </div>
+
+    <div class="menu-item amethyst" (click)="loadDashBoard('TICKET_MEDIO')">
+      <img src="./../../assets/images/icon-ticket.png" class="icon-ticket" width="70"/>
+      <div class="text-item">
+        <span>TICKET MÉDIO</span>
+      </div>
+      <div class="arrow-right">
+        <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
+      </div>
+    </div>
+    
   </div>
 
 </ion-content>

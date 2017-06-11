@@ -22,6 +22,7 @@ export class MenuPage {
   }
 
   loadDashBoard(type: string){
+    if(type === 'TICKET_MEDIO')
       console.log(type);
   }
 
