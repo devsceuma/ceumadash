@@ -46,7 +46,7 @@ export class TicketMedioPage {
         ies: label,
         valor: number
       }
-      this.navCtrl.push(TicketMedioDetails, {objChart: JSON.stringify(obj)});
+      this.navCtrl.push(TicketMedioDetails, {objChart: obj});
     }
 
   }
