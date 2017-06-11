@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import {TicketMedioPage} from './../ticket-medio/ticket-medio';
 
 /**
  * Generated class for the MenuPage page.
@@ -14,7 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MenuPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ies:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, ) {
   }
 
   ionViewDidLoad() {
@@ -23,7 +26,7 @@ export class MenuPage {
 
   loadDashBoard(type: string){
     if(type === 'TICKET_MEDIO')
-      console.log(type);
+      this.navCtrl.push(TicketMedioPage,{ies: this.ies});
   }
 
 }

@@ -16,7 +16,7 @@
     <ion-list>
       <ion-item>
         <ion-label>Selecione a IES</ion-label>
-        <ion-select>
+        <ion-select [(ngModel)]="ies">
           <ion-option value="CEUMA">Ceuma</ion-option>
           <ion-option value="EURO">Euro</ion-option>
           <ion-option value="FAMAZ">Famaz</ion-option>
@@ -59,7 +59,7 @@
         <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
       </div>
     </div>
-    
+
     <div class="menu-item sun-flower" (click)="loadDashBoard('TICKET_MEDIO')">
       <img src="./../../assets/images/icon-ticket.png" class="icon-ticket" width="70"/>
       <div class="text-item">
@@ -79,7 +79,7 @@
         <img src="./../../assets/images/right-arrow.png" class="icon-ticket" width="30"/>
       </div>
     </div>
-    
+
   </div>
 
 </ion-content>

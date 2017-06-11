@@ -6,22 +6,28 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {TicketMedioPage} from  '../pages/ticket-medio/ticket-medio';
 import {MenuPage} from '../pages/menu/menu';
+import {ChartsModule} from 'ng2-charts/charts/charts';
+import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    TicketMedioPage,
     MenuPage
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
+    TicketMedioPage,
     MenuPage
   ],
   providers: [

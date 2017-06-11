@@ -6,13 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ticket-medio</ion-title>
+  <ion-navbar color='dark-blue'>
+    <ion-title>Ticket Médio</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <div class="title-general">
+      <span class="general">Resumo Geral</span>
+  </div>
+
+    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabel" [chartType]="pieChartType" (chartClick)="_captureChartClick($event)"></canvas>
 
 </ion-content>
