@@ -12,21 +12,75 @@
 
 </ion-header>
 
-
-<ion-content padding>
-
-  <div class="title-general">
-     Resumo Geral
+<ion-content padding style="padding:0px;">
+  <div>
+    <div>
+      <ion-list>
+        <ion-item style="border:thin solid #ccc;">
+          <ion-label>Filial</ion-label>
+          <ion-select [(ngModel)]="filial">
+            <ion-option selected="true" value="RENASCENÇA">Renascença</ion-option>
+            <ion-option value="TURU">Turu</ion-option>
+            <ion-option value="ANIL">Anil</ion-option>
+            <ion-option value="COHAMA">Cohama</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div>
+      <ion-list>
+        <ion-item style="border:thin solid #ccc;">
+          <ion-label>Ano</ion-label>
+          <ion-select [(ngModel)]="ano">
+            <ion-option selected="true" value="2017">2017</ion-option>
+            <ion-option value="2016">2016</ion-option>
+            <ion-option value="2015">2015</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div>
+      <ion-list>
+        <ion-item style="border:thin solid #ccc;">
+          <ion-label>Mês</ion-label>
+          <ion-select [(ngModel)]="mes">
+            <ion-option selected="true" value="Janeiro">Janeiro</ion-option>
+            <ion-option value="Fevereiro">Fevereiro</ion-option>
+            <ion-option value="Março">Março</ion-option>
+            <ion-option value="Abril">Abril</ion-option>
+            <ion-option value="Maio">Maio</ion-option>
+            <ion-option value="Junho">Junho</ion-option>
+            <ion-option value="Julho">Julho</ion-option>
+            <ion-option value="Agosto">Agosto</ion-option>
+            <ion-option value="Setembro">Setembro</ion-option>
+            <ion-option value="Outubro">Outubro</ion-option>
+            <ion-option value="Novembro">Novembro</ion-option>
+            <ion-option value="Dezembro">Dezembro</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
   </div>
 
-    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabel" [chartType]="pieChartType" (chartClick)="_captureChartClick($event)"></canvas>
+  <div class="title-general">
+    Resumo Geral
+  </div>
 
-  
-  <div class="resumo">
+  <div>
+    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+      [chartType]="barChartType"></canvas>
+      <span style="display:block; float:right;">
+        <button ion-button small>Visualizar Mais</button>
+      </span>
+  </div>
+
+  <div class="resumo" style="margin-top:60px">
     <div class="item-resumo" *ngFor="let resumo of resumos">
-      <span>{{resumo.ies}}</span>
+      <span>{{resumo.cod}} - </span>
+      <span>  {{resumo.curso}}</span>
       <span style="display:block; float:right;">{{resumo.valor}}</span>
       <hr/>
     </div>
   </div>
+
 </ion-content>

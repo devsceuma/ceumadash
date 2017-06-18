@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
-import {TicketMedioPage} from './../ticket-medio/ticket-medio';
+import {TicketMedioPage} from '../../ticket-medio/ticket-medio';
+import { MenuFinanceiro } from '../menu-financeiro/menu-financeiro';
 
 /**
  * Generated class for the MenuPage page.
@@ -11,9 +12,9 @@ import {TicketMedioPage} from './../ticket-medio/ticket-medio';
 @IonicPage()
 @Component({
   selector: 'page-menu',
-  templateUrl: 'menu.html',
+  templateUrl: 'menu-principal.html',
 })
-export class MenuPage {
+export class MenuPrincipal {
 
   ies:string;
 
@@ -26,7 +27,7 @@ export class MenuPage {
 
   loadDashBoard(type: string){
     if(type === 'TICKET_MEDIO')
-      this.navCtrl.push(TicketMedioPage,{ies: this.ies});
+      this.navCtrl.push(MenuFinanceiro);
   }
 
 }

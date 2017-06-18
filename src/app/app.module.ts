@@ -8,8 +8,10 @@ import {HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {TicketMedioPage} from  '../pages/ticket-medio/ticket-medio';
+import {TicketMedioPage2} from  '../pages/ticket-medio2/ticket-medio';
 import { TicketMedioDetails } from '../pages/ticket-medio-details/ticket-medio-details'; 
-import {MenuPage} from '../pages/menu/menu';
+import {MenuFinanceiro} from '../pages/menu/menu-financeiro/menu-financeiro';
+import {MenuPrincipal } from '../pages/menu/menu-principal/menu-principal';
 import {ChartsModule} from 'ng2-charts/charts/charts';
 import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
 
@@ -18,7 +20,9 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
     MyApp,
     HomePage,
     TicketMedioPage,
-    MenuPage,
+    MenuFinanceiro,
+    MenuPrincipal,
+    TicketMedioPage2,
     TicketMedioDetails
   ],
   imports: [
@@ -32,7 +36,9 @@ import '../../node_modules/chart.js/dist/Chart.bundle.min.js';
     MyApp,
     HomePage,
     TicketMedioPage,
-    MenuPage,
+    MenuFinanceiro,
+    MenuPrincipal,
+    TicketMedioPage2,
     TicketMedioDetails
   ],
   providers: [

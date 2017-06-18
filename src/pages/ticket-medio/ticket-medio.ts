@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { TicketMedioDetails } from '../../pages/ticket-medio-details/ticket-medio-details'
 
 
@@ -15,39 +15,34 @@ import { TicketMedioDetails } from '../../pages/ticket-medio-details/ticket-medi
 })
 export class TicketMedioPage {
 
-  pieChartLabel: string[] = ['CEUMA','EURO', 'FAMAZ', 'CEUPI', 'CESUP'];
-  pieChartData: number[] = [192031.32,303209.2,103822.132,382713.2,21311.3];
-  pieChartType: string = 'pie';
-  resumo: any;
+  retornoJson = {
+    codCurso: ['01', '02', '03', '04', '05', '06'],
+    nomeCurso: ["Medicina", "Bio Medicina", "Odontologia", "Famacia", "Direito", "Sistemas de Informação"],
+    valorCurso: [3400, 5678, 6500, 10000, 8005, 7000]
+  }
+
   resumos = [];
 
+  public barChartOptions: any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels: string[] = this.retornoJson.codCurso;
+  public barChartType: string = 'bar';
+  public barChartLegend: boolean = true;
 
-  obj;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  public barChartData: any[] = [
+    { data: this.retornoJson.valorCurso, label: 'Cursos' }
+  ];
+
 
   ionViewDidLoad() {
-
-    this.resumos.push({ies: this.pieChartLabel[0], valor: this.pieChartData[0]});
-    this.resumos.push({ies: this.pieChartLabel[1], valor: this.pieChartData[1]});
-    this.resumos.push({ies: this.pieChartLabel[2], valor: this.pieChartData[2]});
-    this.resumos.push({ies: this.pieChartLabel[3], valor: this.pieChartData[3]});
-    this.resumos.push({ies: this.pieChartLabel[4], valor: this.pieChartData[4]});
+    this.resumos.push({ cod: this.retornoJson.codCurso[0], curso: this.retornoJson.nomeCurso[0], valor: 'R$ '+this.retornoJson.valorCurso[0].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") });
+    this.resumos.push({ cod: this.retornoJson.codCurso[1], curso: this.retornoJson.nomeCurso[1], valor: 'R$ '+this.retornoJson.valorCurso[1].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") });
+    this.resumos.push({ cod: this.retornoJson.codCurso[2], curso: this.retornoJson.nomeCurso[2], valor: 'R$ '+this.retornoJson.valorCurso[2].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") });
+    this.resumos.push({ cod: this.retornoJson.codCurso[3], curso: this.retornoJson.nomeCurso[3], valor: 'R$ '+this.retornoJson.valorCurso[3].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") });
+    this.resumos.push({ cod: this.retornoJson.codCurso[4], curso: this.retornoJson.nomeCurso[4], valor: 'R$ '+this.retornoJson.valorCurso[4].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") });
+    this.resumos.push({ cod: this.retornoJson.codCurso[5], curso: this.retornoJson.nomeCurso[5], valor: 'R$ '+this.retornoJson.valorCurso[5].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") });
   }
 
-  private _captureChartClick(event){
-    if(typeof event.active[0] !== 'undefined'){
-      const index = event.active[0]._chart.lastActive[0]._index;
-      const label = event.active[0]._chart.config.data.labels[index];
-      const number = event.active[0]._chart.config.data.datasets[0].data[index];
-
-      let obj= {
-        index: index,
-        ies: label,
-        valor: number
-      }
-      this.navCtrl.push(TicketMedioDetails, {objChart: obj});
-    }
-
-  }
 }
